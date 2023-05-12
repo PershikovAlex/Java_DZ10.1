@@ -1,41 +1,49 @@
 package ru.netology.statistic;
 
 public class Radio {
-    private int currentNumberRadioStation;
+    private int minNumberStation = 0;
+    private int quantityStation = 10;
+    private int currentNumberStation;
+    private int maxNumberStation = quantityStation - 1;
     private int currentVolume;
-    private final int minNumberRadioStation = 0;
-    private final int maxNumberRadioStation = 9;
-    private final int minVolume = 0;
-    private final int maxVolume = 100;
+    private int minVolume = 0;
+    private int maxVolume = 100;
 
-
-    public int getCurrentNumberRadioStation() {
-        return currentNumberRadioStation;
+    public Radio(int quantityStation) {
+        this.maxNumberStation = quantityStation - 1;
     }
 
-    public void setCurrentNumberRadioStation(int newCurrentNumberRadioStation) {
-        if (newCurrentNumberRadioStation < minNumberRadioStation) {
+    public Radio() {
+
+    }
+
+    public int getCurrentNumberStation() {
+        return currentNumberStation;
+    }
+
+    public void setCurrentNumberStation(int newCurrentNumberStation) {
+        if (newCurrentNumberStation < minNumberStation) {
             return;
         }
-        if (newCurrentNumberRadioStation > maxNumberRadioStation) {
+        if (newCurrentNumberStation > maxNumberStation) {
             return;
         }
-        currentNumberRadioStation = newCurrentNumberRadioStation;
+        currentNumberStation = newCurrentNumberStation;
     }
 
-    public void nextNumberRadioStation() {
-        if (currentNumberRadioStation < maxNumberRadioStation) {
-            currentNumberRadioStation = currentNumberRadioStation + 1;
+    public void nextNumberStation() {
+        if (currentNumberStation < maxNumberStation) {
+            currentNumberStation = currentNumberStation + 1;
         } else {
-            currentNumberRadioStation = minNumberRadioStation;
+            currentNumberStation = minNumberStation;
         }
     }
 
-    public void prevNumberRadioStation() {
-        if (currentNumberRadioStation > minNumberRadioStation) {
-            currentNumberRadioStation = currentNumberRadioStation - 1;
+    public void prevNumberStation() {
+        if (currentNumberStation > minNumberStation) {
+            currentNumberStation = currentNumberStation - 1;
         } else {
-            currentNumberRadioStation = maxNumberRadioStation;
+            currentNumberStation = maxNumberStation;
         }
     }
 
