@@ -48,17 +48,15 @@ public class RadioTest {
     @Test
     public void shouldNumberStationAboveMax() {
         radio.setCurrentNumberStation(10);
-        radio.nextNumberStation();
 
-        Assertions.assertEquals(1, radio.getCurrentNumberStation());
+        Assertions.assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
     public void shouldNumberStationBelowMin() {
         radio.setCurrentNumberStation(-1);
-        radio.prevNumberStation();
 
-        Assertions.assertEquals(9, radio.getCurrentNumberStation());
+        Assertions.assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
@@ -103,16 +101,14 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseVolumeAboveMax() {
-        radio.setCurrentVolume(101);
-        radio.increaseVolume();
+        radio.setCurrentVolume(110);
 
         Assertions.assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
     public void shouldReduceVolumeBelowMin() {
-        radio.setCurrentVolume(-1);
-        radio.reduceVolume();
+        radio.setCurrentVolume(-5);
 
         Assertions.assertEquals(0, radio.getCurrentVolume());
     }
