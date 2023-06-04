@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
-    Radio radio = new Radio(10);
+    Radio radio = new Radio();
 
     @Test
     public void shouldSelectNumberStation() {
@@ -15,6 +15,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextNumberStation() {
+        Radio radio = new Radio(10);
         radio.setCurrentNumberStation(6);
         radio.nextNumberStation();
 
